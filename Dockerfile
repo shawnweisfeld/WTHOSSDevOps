@@ -8,5 +8,6 @@ RUN pip install flask_prometheus
 COPY src /src
 
 EXPOSE 80
+EXPOSE 8000
 
 CMD ["python", "/src/main.py"]
