@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask_prometheus import monitor 
 import socket
 import sys
 import os
@@ -26,4 +27,5 @@ def index():
         return render_template("index.html", value1=vote1, value2=vote2, button1=button1, button2=button2, title=title)
 
 if __name__ == "__main__":
+    monitor(app, port=8000)
     app.run(host='0.0.0.0', debug=True, port=80)
